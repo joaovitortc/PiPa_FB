@@ -39,18 +39,41 @@ fetch("data.json")
         const cards = dishesContainer.querySelectorAll("div"); // a nodeList of all the cards
         cards.forEach((card) => {
           //hides card only if doesn't match user input by using .includes()
-          const title = card.querySelector("h4").textContent;
+          const title = card.querySelector(".card-title").textContent;
           const isVisible = title.toLowerCase().includes(value);
           card.classList.toggle("hide", !isVisible);
         });
       });
 })
 
-function createCard(dish) {
-    let dishCard = document.createElement('div');
-    let name = document.createElement('h4');
-    name.textContent = dish.dish_name;
-    dishCard.classList.add('container');
-    dishCard.appendChild(name);
-    dishesContainer.appendChild(dishCard);
-}
+    function createCard(dish) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.width = '18rem';
+    
+        const cardImage = document.createElement('img');
+        cardImage.className = 'card-img-top';
+        cardImage.src = dish.dish_img; 
+        cardImage.alt = 'Card image cap';
+    
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+    
+        const cardTitle = document.createElement('h5');
+        cardTitle.className = 'card-title';
+        cardTitle.textContent = dish.dish_name;
+    
+        const cardText = document.createElement('p');
+        cardText.className = 'card-text';
+        cardText.textContent = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+    
+        // Appending elements to build the card
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+    
+        card.appendChild(cardImage);
+        card.appendChild(cardBody);
+    
+        dishesContainer.appendChild(card);
+        return card;
+      }

@@ -263,7 +263,7 @@
       },
       {
         "dish_name": "Focaccia Bianca",
-        "dish_img": "",
+        "dish_img": "https://github.com/joaovitortc/PiPa_FB/blob/master/Images/foccaciaBianca.png?raw=true",
         "common_allergies": ["GLUTEN", "BARLEY (diastatic malt flour)"],
         "ingredients": [
           "Focaccia Genovese Dough (Mulino Marino Flour Type 0, Olitalia European Oil Blend, fine sea salt, Fresh Eagle yeast, water, Diastatic Malt Flour, Olitalia EVOO)",
